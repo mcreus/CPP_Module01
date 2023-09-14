@@ -6,7 +6,7 @@
 /*   By: mcreus <mcreus@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:14:31 by mcreus            #+#    #+#             */
-/*   Updated: 2023/09/13 16:57:51 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:43:09 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int ac, char **av)
     int j;
     std::string nameHorde;
     
-    j = 1000;
+    j = 2000;
     if (ac == 2)
     {
         nameHorde = av[1];
@@ -26,6 +26,6 @@ int main(int ac, char **av)
         delete[] (newzombie);
     }
     else
-        std::cout << "Choisissez un nom de horde!!!" << std::endl;
+        std::cout << "Choisissez un nom de teamhorde!!!" << std::endl;
     return (0);
 }

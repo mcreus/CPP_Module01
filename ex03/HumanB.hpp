@@ -1,4 +1,4 @@
-#ifndef HUMANA_HPP
+#ifndef HUMANB_HPP
 # define HUMANB_HPP
 
 # include <iostream>
@@ -6,19 +6,20 @@
 # include <string>
 # include "Weapon.hpp"
 
-class HumanA
+class HumanB
 {
     public:
 
-        HumanA();
-        HumanA(std::string name, Weapon& _type);
-        ~HumanA();
+        HumanB();
+        HumanB(std::string name);
+        ~HumanB();
         void    attack();
 
     private:
 
         std::string _name;
         Weapon  _type;
+
 };
 
 #endif

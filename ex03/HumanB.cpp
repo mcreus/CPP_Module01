@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcreus <mcreus@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 18:00:10 by mcreus            #+#    #+#             */
-/*   Updated: 2023/09/14 18:25:48 by mcreus           ###   ########.fr       */
+/*   Created: 2023/09/14 16:54:26 by mcreus            #+#    #+#             */
+/*   Updated: 2023/09/14 18:16:42 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-Weapon::Weapon(std::string type)
-{
-    this->_type = type;
-}
-
-Weapon::~Weapon()
+HumanB::HumanB()
 {
     
 }
 
-std::string Weapon::getType() const
+HumanB::HumanB(std::string name)
 {
-    return (this->_type);
+    _name = name;
 }
 
-void    Weapon::setType(std::string type)
+HumanB::~HumanB()
 {
-    this->_type = type;
+    
 }
+
