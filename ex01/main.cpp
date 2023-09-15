@@ -6,7 +6,7 @@
 /*   By: mcreus <mcreus@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:14:31 by mcreus            #+#    #+#             */
-/*   Updated: 2023/09/14 16:43:09 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/09/15 11:35:17 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int main(int ac, char **av)
         delete[] (newzombie);
     }
     else
-        std::cout << "Choisissez un nom de teamhorde!!!" << std::endl;
+        std::cerr << "Choisissez un nom de teamhorde!!!" << std::endl;
     return (0);
 }

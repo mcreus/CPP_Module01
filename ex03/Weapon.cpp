@@ -6,7 +6,7 @@
 /*   By: mcreus <mcreus@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 18:00:10 by mcreus            #+#    #+#             */
-/*   Updated: 2023/09/14 18:25:48 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/09/15 11:15:10 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Weapon::~Weapon()
     
 }
 
-std::string Weapon::getType() const
+std::string const & Weapon::getType()
 {
     return (this->_type);
 }
