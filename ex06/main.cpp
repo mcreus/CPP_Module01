@@ -6,39 +6,57 @@
 /*   By: mcreus <mcreus@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:51:27 by mcreus            #+#    #+#             */
-/*   Updated: 2023/09/18 16:05:36 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/09/18 17:40:50 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
+enum LEVEL
+{
+    DEBUG ,
+    INFO ,
+    WARNING ,
+    ERROR ,
+    NOLEVEL
+};
+
+int compareLevel(std::string str)
+{
+    if (str.compare("DEBUG") == 0)
+        return (DEBUG);
+    else if (str.compare("INFO") == 0)
+        return (INFO);
+    else if (str.compare("WARNING") == 0)
+        return (WARNING);
+    else if (str.compare("ERROR") == 0)
+        return (ERROR);
+    else
+        return (NOLEVEL);
+}
+
 int main(int ac, char **av)
 {
     Harl        harl;
-    std::string str[4];
-    int         levelHarl = 0;
+    std::string str;
+    int         levelHarl;
 
-    str[0] = "DEBUG";
-    str[1] = "INFO";
-    str[2] = "WARNING";
-    str[3] = "ERROR";
-    
     if (ac != 2)
     {
         std::cerr << "Merci de mettre un niveau en premier argument" << std::endl;
         return (1);
     }
-    if (str[levelHarl].compare(av[1]) && levelHarl < 4)
-        levelHarl++;
+    str = av[1];
+    levelHarl = compareLevel(str);
     switch (levelHarl)
     {
-        case (0):
+        case (DEBUG):
             harl.complain("DEBUG");
-        case (1):
+        case (INFO):
             harl.complain("INFO");
-        case (2):
+        case (WARNING):
             harl.complain("WARNING");
-        case (3):
+        case (ERROR):
         {
             harl.complain("ERROR");
             break;
