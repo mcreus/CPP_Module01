@@ -15,7 +15,7 @@ $(NAME): $(OBJS)
 
 clean:
 		@echo "\033[0;31mDELETING OBJS\n"
-		rm -rf $(OBJS)
+		rm -rf $(OBJS) *.replace
 		@echo "\033[1;32mDONE\n"
 
 fclean: clean
