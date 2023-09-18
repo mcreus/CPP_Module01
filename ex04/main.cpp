@@ -6,7 +6,7 @@
 /*   By: mcreus <mcreus@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:41:29 by mcreus            #+#    #+#             */
-/*   Updated: 2023/09/15 19:03:42 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/09/15 21:42:29 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ int	main(int ac, char *av[])
 	std::string	newContent;
 	std::string	s1;
 	std::string	s2;
-	std::string	newTestFile("./newTestFile.txt");
+	std::string	newTestFile;
 	size_t			startPos;
 	size_t			s1Pos;
+    size_t          posNameFile;
 
 	testFile = av[1];
 	s1 = av[2];
@@ -39,18 +40,21 @@ int	main(int ac, char *av[])
 		std::cerr << "ERREUR: Impossible d'ouvrir le fichier en lecture." << std::endl;
 	while (std::getline(monFlux, line))
 			content += line + '\n';
-		
+	monFlux.close();	
 	startPos = 0;
 	s1Pos = content.find(s1);
-	while (s1Pos != std::string::npos)
-	{
-		newContent += content.substr(startPos, (s1Pos - startPos));
-		newContent += s2;
-		startPos = s1Pos + s1.length();
-		s1Pos = content.find(s1, startPos);
-	}
-	newContent += content.substr(s1Pos);
-	std::ofstream monFlux2("./newTestFile.txt");
+    while (s1Pos != std::string::npos)
+    {
+	    newContent += content.substr(startPos, (s1Pos - startPos));
+	    newContent += s2;
+	    startPos = s1Pos + s1.length();
+	    s1Pos = content.find(s1, startPos);
+    }
+	newContent += content.substr(startPos);
+    posNameFile = testFile.find_last_of('.');
+    newTestFile = testFile.substr(0, posNameFile);
+    newTestFile = newTestFile.append(".replace");
+	std::ofstream monFlux2(newTestFile);
 	if (monFlux2)
 		monFlux2 << newContent;
 	else
